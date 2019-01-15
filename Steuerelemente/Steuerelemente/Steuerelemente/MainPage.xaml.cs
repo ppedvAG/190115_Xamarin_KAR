@@ -13,5 +13,11 @@ namespace Steuerelemente
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            if (entryUsername.Text == "Max Mustermann" && entryPasswort.Text == "geheim")
+                DisplayAlert("Login", "Login erfolgreich !!!", "Ok");
+        }
     }
 }

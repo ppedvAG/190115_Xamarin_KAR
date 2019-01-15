@@ -5,12 +5,34 @@
              x:Class="Steuerelemente.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Mein erstes Label"
+               TextColor="Blue"
+               FontSize="30"/>
+        <Button Text="Klick mich!" BorderRadius="20" BackgroundColor="Green" Clicked="Button_Clicked"/>
+        <!-- TextBox -->
+        <Entry x:Name="entryUsername" Placeholder="Username" Keyboard="Numeric" />
+        <Entry x:Name="entryPasswort" Placeholder="Passwort" IsPassword="True" />
+        <!-- Multiline-TextBox -->
+        <Editor HeightRequest="150"/>
+        <!-- CheckBox -->
+        <Switch IsToggled="True"/>
+        <Slider Minimum="0" Maximum="100" Value="30"/>
+        <!-- Minimum = 0, Maximum = 1 -->
+        <ProgressBar Progress="0.333"/>
+        <Stepper Minimum="0" Maximum="100" Increment="10" />
         
-        
+        <!-- ComboBox -->
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+            </Picker.Items>
+        </Picker>
+        <BoxView HeightRequest="10" BackgroundColor="White"/>
+        <DatePicker />
+        <TimePicker />
+
     </StackLayout>
 
 </ContentPage>
