@@ -2,13 +2,126 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Layoutcontainer"
-             x:Class="Layoutcontainer.MainPage">
+             x:Class="Layoutcontainer.MainPage"
+             BackgroundColor="LimeGreen">
+    <ContentPage.Resources>
+        <ResourceDictionary>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <x:Double x:Key="defaultSize">40</x:Double>
+            
+            <!-- Expliziter Style -->
+            <Style TargetType="Button" x:Key="redButtonStyle">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="Blue"/>
+            </Style>
+            
+            <!-- Expliziter Style -->
+            <Style TargetType="Button" x:Key="blueButtonStyle">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="BackgroundColor" Value="Blue"/>
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
 
+            <!-- Impliziter Style -->
+            <Style TargetType="Button" >
+                <Setter Property="FontSize" Value="8"/>
+                <Setter Property="BackgroundColor" Value="BlueViolet"/>
+                <Setter Property="TextColor" Value="LightGreen"/>
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <!--<StackLayout BackgroundColor="Magenta"
+                 Spacing="10">
+        <Button Text="Button 1"/>
+        <Button Text="Button 2"/>
+        <BoxView BackgroundColor="LightYellow"
+                 VerticalOptions="FillAndExpand"/>
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="End">
+            <Button Text="Ok" FontSize="50"/>
+            <Button Text="Abbrechen"/>
+        </StackLayout>
+    </StackLayout>-->
+
+    <!--<Grid BackgroundColor="MediumVioletRed"
+          RowSpacing="10"
+          ColumnSpacing="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <BoxView BackgroundColor="PapayaWhip"/>
+        <Button Text="OK" WidthRequest="150" Grid.Column="1"/>
+        <BoxView Grid.Row="1" BackgroundColor="Lavender"/>
+        <BoxView Grid.Row="2" BackgroundColor="MediumBlue"/>
+        <BoxView Grid.Row="3" BackgroundColor="LightSalmon"/>
+        <BoxView Grid.Row="4" BackgroundColor="Red"/>
+    </Grid>-->
+    
+    <!-- Padding="jedeRichtung" -->
+    <!-- Padding="linksrechts,obenunten" -->
+    <!-- Padding="links,oben,rechts,unten" -->
+    <!-- Padding = Innenabstand, Margin = Aussenabstand -->
+    <!--<Grid Padding="10,20,30,40" BackgroundColor="DarkSlateGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+    
+        <Entry Placeholder="Suchtext"/>
+        <Button Padding="20" Grid.Column="1" Text="Datensätze laden !!!"/>
+        <ListView Grid.ColumnSpan="2" Grid.Row="1"
+                  BackgroundColor="Green"/>
+    </Grid>-->
+
+
+    <Grid BackgroundColor="DarkSlateGray"
+          Padding="40"
+          ColumnSpacing="10"
+          RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Text="1234" FontSize="40" Grid.Column="1"/>
+
+        <Button Grid.Row="1" Grid.Column="0" Text="1" BackgroundColor="Orange" BorderRadius="25" TextColor="Black" FontSize="{StaticResource defaultSize}"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" BackgroundColor="Orange" BorderRadius="25" TextColor="Black" FontSize="{StaticResource defaultSize}"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" BackgroundColor="Orange" BorderRadius="25" TextColor="Black" FontSize="{StaticResource defaultSize}"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource redButtonStyle}" Clicked="Button_Clicked"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource redButtonStyle}" BackgroundColor="Yellow"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{StaticResource redButtonStyle}"/>
+
+        <Button Grid.Row="3" Grid.Column="0" Text="7"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="8"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="9"/>
+
+        <Button Grid.Row="4" Grid.Column="1" Text="0" BackgroundColor="White" BorderRadius="25" TextColor="Black"/>
+        <Button Grid.Row="5" Grid.ColumnSpan="3" Text="Dial" BackgroundColor="LightGreen" BorderRadius="25" TextColor="Black"/>
+
+
+    </Grid>
+    
 </ContentPage>
