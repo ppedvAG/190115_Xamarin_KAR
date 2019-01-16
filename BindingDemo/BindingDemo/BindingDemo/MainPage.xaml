@@ -3,12 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BindingDemo"
              x:Class="BindingDemo.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:Farbconverter x:Key="farbkonverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="Center">
+        <Slider x:Name="sliderWert" Minimum="0" Maximum="100"/>
+        <Label x:Name="labelWert" Text="{Binding Source={x:Reference sliderWert},Path=Value}"/>
+        <Label Text="Schau mal wie groß ich bin !!!"
+               FontSize="{Binding Source={x:Reference sliderWert},Path=Value}"/>
+        
+        <BoxView BackgroundColor="Black" HeightRequest="3"/>
+
+        <Entry x:Name="entryEingabe"/>
+        <Label Text="{Binding Source={x:Reference entryEingabe},
+                              Path=Text,
+                              StringFormat='Deine Eingabe ist: {0}' }"/>
+
+        <BoxView BackgroundColor="Black" HeightRequest="3"/>
+        
+        <Entry x:Name="entry1"/>
+        <Entry x:Name="entry2" Text="{Binding Source={x:Reference entry1},
+                                              Path=Text,
+                                              Mode=OneWay}"/>
+        <Entry x:Name="entryAlternativeSchreibweise"
+               Text="{Binding Text, Source={x:Reference entry1}}"/>
+        
+        <BoxView BackgroundColor="Black" HeightRequest="3"/>
+
+        <Entry x:Name="entryFarbe" Text="Blue"/>
+        <BoxView HeightRequest="100" WidthRequest="100" HorizontalOptions="CenterAndExpand"
+                 BackgroundColor="{Binding Text,Source={x:Reference entryFarbe},
+                                           TargetNullValue=Black,
+                                           FallbackValue=Magenta,
+                                           Converter={StaticResource farbkonverter}}"/>
+        
+        
+        
+
     </StackLayout>
 
 </ContentPage>

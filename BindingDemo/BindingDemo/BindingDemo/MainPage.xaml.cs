@@ -13,5 +13,10 @@ namespace BindingDemo
         {
             InitializeComponent();
         }
+
+        //private void SliderWert_ValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    labelWert.Text = sliderWert.Value.ToString();
+        //}
     }
 }
