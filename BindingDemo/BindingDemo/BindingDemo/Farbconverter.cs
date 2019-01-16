@@ -10,6 +10,8 @@ namespace BindingDemo
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            // Color.FromHex()
+
             string farbe = (string)value;
             if (farbe == "Rot")
                 return Color.Red;
