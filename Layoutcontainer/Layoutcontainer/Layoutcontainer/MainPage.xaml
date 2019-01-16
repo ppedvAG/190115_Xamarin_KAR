@@ -6,7 +6,6 @@
              BackgroundColor="LimeGreen">
     <ContentPage.Resources>
         <ResourceDictionary>
-
             <x:Double x:Key="defaultSize">40</x:Double>
             
             <!-- Expliziter Style -->
@@ -92,7 +91,7 @@
     </Grid>-->
 
 
-    <Grid BackgroundColor="DarkSlateGray"
+    <!--<Grid BackgroundColor="DarkSlateGray"
           Padding="40"
           ColumnSpacing="10"
           RowSpacing="10">
@@ -122,6 +121,98 @@
         <Button Grid.Row="5" Grid.ColumnSpan="3" Text="Dial" BackgroundColor="LightGreen" BorderRadius="25" TextColor="Black"/>
 
 
-    </Grid>
+    </Grid>-->
+    
+    <!-- LayoutBounds="x,y,width,height"-->
+
+    <!--<AbsoluteLayout>
+
+        <BoxView BackgroundColor="Ivory"
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.3"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView BackgroundColor="LightCyan"
+                 AbsoluteLayout.LayoutBounds="10,10,50,50"/>
+        <BoxView BackgroundColor="RoyalBlue"
+                 AbsoluteLayout.LayoutBounds="30,30,50,50"/>
+
+        <BoxView BackgroundColor="Orchid"
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.7"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+    </AbsoluteLayout>-->
+
+    <!--<RelativeLayout>
+        <BoxView x:Name="boxViewHeader" BackgroundColor="SaddleBrown"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Width,
+                    Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                    Type=RelativeToParent,
+                    Property=Height,
+                    Factor=0.3}"/>
+
+        <BoxView BackgroundColor="LightSteelBlue" WidthRequest="100" HeightRequest="100"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                   Type=RelativeToView,
+                   ElementName=boxViewHeader,
+                   Property=Height,
+                   Constant=-50}"
+               
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                    Type=RelativeToView,
+                    ElementName=boxViewHeader,
+                    Property=Width,
+                    Factor=0.5,
+                    Constant=-50}"/>
+       
+    </RelativeLayout>-->
+
+    <!--<StackLayout BackgroundColor="Black">
+        <Label>
+            <Label.Text>
+                
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+                
+Pellentesque habitant morbi
+                
+                tristique senectus et netus et 
+       lesuada fames ac turpis egestas.
+             Proin pharetra nonummy pede. Mauris et orci.
+
+            </Label.Text>
+        </Label>
+    </StackLayout>-->
+
+    <TableView BackgroundColor="MediumBlue">
+        <TableRoot>
+            <TableSection Title="Einstellungen">
+                <TextCell StyleId="textStyle" Text="Wie ein Label" Detail="Untertitel"/>
+                <EntryCell Label="Vorname:" Placeholder="Max"/>
+                <EntryCell Label="Nachname:" Placeholder="Mustermann"/>
+                <SwitchCell Text="Notification" On="True"/>
+            </TableSection>
+
+            <TableSection Title="Advanced">
+                <TextCell Text="Neue Einstellungen" Detail="Untertitel"/>
+                <ImageCell Text="Mein Bild" Detail="Mein Untertitel zum Bild"
+                           ImageSource="https://baconmockup.com/100/100/"/>
+
+                <!-- Eigene Zellen basteln -->
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Startdatum:"/>
+                        <DatePicker HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </ViewCell>
+            
+            </TableSection>
+            
+            
+        </TableRoot>
+    </TableView>
+    
+    
     
 </ContentPage>
