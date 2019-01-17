@@ -27,6 +27,11 @@ namespace Image_Demo
             // Resouce-ID: Projektname.Ordnername.Dateiname.Extension
             // katze.jpg: Properties -> BuildAction -> EmbeddedResource
             // imageTier.Source =  ImageSource.FromResource("Image_Demo.Icons.katze.jpg");
+
+            if(Device.Idiom == TargetIdiom.Tablet && Device.RuntimePlatform == Device.Android)
+            {
+                // Android-Tablet
+            }
         }
     }
 }

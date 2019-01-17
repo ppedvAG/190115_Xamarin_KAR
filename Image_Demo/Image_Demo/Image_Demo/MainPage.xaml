@@ -14,8 +14,25 @@
 
         <!-- Image x:Name="imageTier" Source="{local:EmbeddedResource ID=Image_Demo.Icons.katze.jpg }" /-->
         <Image x:Name="imageTier" Source="{local:EmbeddedResource Image_Demo.Icons.katze.jpg }" />
-        
-        <BoxView BackgroundColor="Blue"/>
+
+        <BoxView>
+            <BoxView.BackgroundColor>
+                <!-- Unterschiedliche Werte pro Betriebssystem-->
+                <OnPlatform Android="Green" iOS="Red" UWP="Blue"/>
+            </BoxView.BackgroundColor>
+        </BoxView>
+        <BoxView>
+            <BoxView.BackgroundColor>
+                <!-- Unterschiedliche Werte pro Betriebssystem-->
+                <OnIdiom Phone="Red" Tablet="Blue" TV="Green" Desktop="Pink"/>
+            </BoxView.BackgroundColor>
+        </BoxView>
+
+        <Button>
+            <Button.Style>
+                <OnPlatform Android="{StaticResource AndroidStyle}" iOS="{StaticResource IosStyle}" />
+            </Button.Style>
+        </Button>
 
     </StackLayout>
 
