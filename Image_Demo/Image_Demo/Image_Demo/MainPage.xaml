@@ -4,11 +4,19 @@
              xmlns:local="clr-namespace:Image_Demo"
              x:Class="Image_Demo.MainPage">
 
-    <StackLayout>
+    <StackLayout VerticalOptions="Center">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Label Text="Welcome to Xamarin.Forms!"/>
+        
+        <!-- Source="http://placekitten.com/g/500/500" -->
+        <!-- Source="Icons/katze.jpg"  -> Schaut im Nativen Projekt nach-->
+        <!-- Bei Android: "Resources/drawable/katze.jpg". bei Ios "Ressources/katze.jpg", bei UWP "Assets/katze.jpg"-->
+
+        <!-- Image x:Name="imageTier" Source="{local:EmbeddedResource ID=Image_Demo.Icons.katze.jpg }" /-->
+        <Image x:Name="imageTier" Source="{local:EmbeddedResource Image_Demo.Icons.katze.jpg }" />
+        
+        <BoxView BackgroundColor="Blue"/>
+
     </StackLayout>
 
 </ContentPage>
