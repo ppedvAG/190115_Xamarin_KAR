@@ -2,13 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:NavigationDemo"
-             x:Class="NavigationDemo.MainPage">
+             x:Class="NavigationDemo.MainPage"
+             Title="Meine erste Seite">
+    <NavigationPage.TitleView>
+        <StackLayout Padding="10" Orientation="Horizontal">
+            <Button Text="😂❤"/>
+            <Button Text="+"/>
+            <Button Text="-&gt;"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="Center">
+
+        <Label Text="Seite 1"/>
+        <Button x:Name="buttonNavigation" Text="Zur Seite 2" Clicked="ButtonNavigation_Clicked"/>
+        <Button x:Name="buttonModal" Text="Zur Seite 2 Modal" Clicked="ButtonModal_Clicked"/>
+
     </StackLayout>
 
 </ContentPage>
