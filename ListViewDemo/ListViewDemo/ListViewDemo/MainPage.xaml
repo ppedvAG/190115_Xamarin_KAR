@@ -5,10 +5,28 @@
              x:Class="ListViewDemo.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+
+        <Button Text="Personen laden !" Clicked="Button_Clicked"/>
+        <SearchBar x:Name="searchBarVorname" TextChanged="SearchBarVorname_TextChanged"/>
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding Kontostand}">
+                        <TextCell.ContextActions>
+                            <MenuItem x:Name="menuItemInfo" Text="Info"
+                                      Clicked="MenuItemInfo_Clicked"
+                                      CommandParameter="{Binding .}"/>
+                            <MenuItem x:Name="menuItemLöschen" Text="Löschen"
+                                      IsDestructive="True"
+                                      Clicked="MenuItemLöschen_Clicked"
+                                      CommandParameter="{Binding .}"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
