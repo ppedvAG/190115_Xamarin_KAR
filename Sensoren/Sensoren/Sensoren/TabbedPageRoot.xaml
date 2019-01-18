@@ -8,5 +8,5 @@
     <local:MainPage Title="Bildschirmrotation"/>
     <local:GeolocationPage Title="Location"/>
     <local:DatenSpeichernPage Title="Daten speichern"/>
-    
+    <local:SQLitePage Title="SQLite"/>
 </TabbedPage>
