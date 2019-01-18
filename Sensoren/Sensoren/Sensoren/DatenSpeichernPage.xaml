@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sensoren.DatenSpeichernPage">
+
+    <StackLayout VerticalOptions="Center">
+        <Entry x:Name="entryDaten" Placeholder="Daten zum Speichern"/>
+        <Button x:Name="buttonSpeichern" Text="Speichern" Clicked="ButtonSpeichern_Clicked"/>
+        <Button x:Name="buttonLaden" Text="Laden" Clicked="ButtonLaden_Clicked" />
+    </StackLayout>
+
+</ContentPage>
